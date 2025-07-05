@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login/register</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/daohang.css">
+</head>
+<body>
+    <div class="nav">
+        <ul class="navlist"> 
+            <li class="left"><a href="#"></a>
+                <a href="http://47.108.216.172/">
+                    <img src="../img/main.png" width="30px"  alt="Login">
+                </a>
+            </li>
+            <a class="left" href="http://47.108.216.172/game">game</a>
+            <li class="right" style="color: rgb(255, 255, 255);">{{ username }}</li>
+            <li class="right"><a href="http://47.108.216.172/login">login/register</a></li>
+        </ul>
+    </div>
+
+    <div class="a">
+        <div class="b"></div>
+        <div class="c">
+            <form class="d" id="loginForm">  
+                <h1>login</h1>
+                <input type="text" class="e" name="username" placeholder="USER NAME" required>
+                <input type="password" class="e" name="password" placeholder="PASSWORD" required>
+                <a href="http://47.108.216.172/register" class="f">REGISTER</a>
+                <button type="submit" class="g">LOGIN</button>
+                <p id="message" style="color: red;"></p> 
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            fetch('/login', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('message').textContent = data; 
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
