@@ -1,0 +1,44 @@
+.nav{
+    height: 40px;
+    background-image: linear-gradient(to right,hsl(250, 30%, 96%),#000000);
+    box-shadow: 0 1px 2px #666;
+    position: fixed;
+    top: 0;
+    width: 100%; 
+}
+*{
+    margin:0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+.left{
+    float: left;
+    width: 100px;
+    line-height:40px ;
+    text-align: center;
+}
+.right{
+    float: right;
+    color: #ffffff;
+    width: 100px;
+    line-height:40px ;
+    text-align: center;
+}
+.navlist a{
+    color:#fff;
+    display: block;
+}
+.navlist a:hover{
+    background-image: linear-gradient(to left,#fcfcfc,#8499a4);
+}
+.xiala{
+    display: none;
+    background-image: linear-gradient(to left,#c0bbf5,#7ecbf4) ;
+}
+.left:hover .xiala{
+    display: block;
+}
+.spacer {
+    height: 40px; 
+}
